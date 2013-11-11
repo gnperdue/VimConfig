@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$(ls -A vim/bundle/syntastic)" = "" ]; then
+  git submodule init
+  git submodule update
+fi
+
 # Check to see if .vim and .vimrc already exist. If they do, archvie them
 # into _bck files unless they are just symbolic links, in which case just
 # remove the old links.
