@@ -7,3 +7,42 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/haskellmode-vim"]
+	path = vim/bundle/haskellmode-vim
+	url = git://github.com/lukerandall/haskellmode-vim.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/vim-javascript-syntax"]
+	path = vim/bundle/vim-javascript-syntax
+	url = git://github.com/jelera/vim-javascript-syntax.git
+[submodule "vim/bundle/jshint"]
+	path = vim/bundle/jshint
+	url = git://github.com/wookiehangover/jshint.vim.git
+[submodule "vim/bundle/html-template-syntax"]
+	path = vim/bundle/html-template-syntax
+	url = git://github.com/pbrisbin/html-template-syntax.git
+[submodule "vim/bundle/neco-ghc"]
+	path = vim/bundle/neco-ghc
+	url = git://github.com/ujihisa/neco-ghc.git
+[submodule "vim/bundle/vimerl"]
+	path = vim/bundle/vimerl
+	url = git://github.com/jimenezrick/vimerl.git
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = git://github.com/honza/vim-snippets.git
+[submodule "vim/bundle/vim-snipmate"]
+	path = vim/bundle/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/tlib_vim"]
+	path = vim/bundle/tlib_vim
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/vim-addon-mw-utils"]
+	path = vim/bundle/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/vim-json"]
+	path = vim/bundle/vim-json
+	url = git://github.com/leshill/vim-json.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
