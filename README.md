@@ -14,4 +14,9 @@ and begin adding submodules.
   Go to the top level:
   git submodule add git://github.com/gnperdue/vim2hs.git vim/bundle/vim2hs
 
+Add some other submodules:
+
+  Go to the top level:
+  git submodule add git://github.com/tpope/vim-commentary.git vim/bundle/vim-commentary
+
 
