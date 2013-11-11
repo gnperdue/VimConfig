@@ -1,0 +1,3 @@
+[submodule "vim/bundle/vim2hs"]
+	path = vim/bundle/vim2hs
+	url = git://github.com/gnperdue/vim2hs.git
