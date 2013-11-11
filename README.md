@@ -11,8 +11,7 @@ In this case, I have simply copied commit
 into vim/autoload and manually created vim/bundle. Then, go to vim/bundle
 and begin adding submodules.
 
-  cd vim/bundle
-  git submodule add git://github.com/gnperdue/vim2hs.git vim2hs
-
+  Go to the top level:
+  git submodule add git://github.com/gnperdue/vim2hs.git vim/bundle/vim2hs
 
 
