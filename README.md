@@ -45,5 +45,7 @@ top level:
 * git submodule init
 * git submodule update
 
-
+Attempt to change a submodule url: First, clean out the submodule. Then, edit the .gitmodules
+file to use the new url. Then run `git submodule sync`. Then run `git submodule init`. 
+Then, run `git submodule sync`. But, `git remote -v` still points to the old submodule...
 
