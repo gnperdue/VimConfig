@@ -47,5 +47,7 @@ top level:
 
 Attempt to change a submodule url: First, clean out the submodule. Then, edit the .gitmodules
 file to use the new url. Then run `git submodule sync`. Then run `git submodule init`. 
-Then, run `git submodule sync`. But, `git remote -v` still points to the old submodule...
+Then, run `git submodule sync`. But, `git remote -v` still points to the old submodule... 
+If I push those changes and then re-check out the enitre VimConfig module, the remote 
+repository is correct. But this is sort of a painful way to swap a submodule.
 
