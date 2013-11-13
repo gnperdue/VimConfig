@@ -1,3 +1,6 @@
+Initial Set-up
+--------------
+
 Right now this is more of a "log of how I set this up" rather than a 
 proper "readme" for users who check this module out to play with.
 
@@ -51,3 +54,16 @@ Then, run `git submodule sync`. But, `git remote -v` still points to the old sub
 If I push those changes and then re-check out the enitre VimConfig module, the remote 
 repository is correct. But this is sort of a painful way to swap a submodule.
 
+Dealing with Changes to Submodules
+----------------------------------
+
+Example: I updated vim2hs. When checking `git status` the repository had a detacehd HEAD, 
+as expected. Therefore, I created a new branch with:
+
+    git checkout -b work`date -u +%s`
+
+This branch was committed. Now, the top-level repository, VimConfig, needs to point at 
+that new commit for the submodule. This turns out to be very easy. `git status` in the 
+supermodule reveals a change at `vim/bundle/vim2hs` - all that needs to be done is this
+needs to have `git add vim/bundle/vim2hs` and then `git commit` to change the pointer
+to the correct commit in the submodule.
