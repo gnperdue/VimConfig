@@ -54,6 +54,9 @@ colorscheme evening
 " colorscheme torte
 " colorscheme zellner
 
+" show me more of the command window (HLint, etc.)
+set cmdheight=2
+
 "case insensitive seach unless there are caps
 set ignorecase
 set smartcase
