@@ -31,6 +31,11 @@ map <Down> :set nonumber<CR>
 map <Left> :bp<CR>
 map <Right> :bn<CR>
 
+" map - to cut a line and move it below the one I'm on
+" map + to cut a line and move it above the one I'm on
+map - ddp
+map + ddkP
+
 set history=200 " Keep the last 200 commands (default is 20)
 
 set nocompatible " explicitly get out of vi-compatible mode
