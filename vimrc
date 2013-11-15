@@ -36,6 +36,12 @@ map <Right> :bn<CR>
 map - ddp
 map + ddkP
 
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" You cannot copy and paste these commands?
+" map shift down to bump all the text down.
+" map {C-v}{Shift-Down} O{C-v}{Esc}j, etc.
+map OB Oj
+
 set history=200 " Keep the last 200 commands (default is 20)
 
 set nocompatible " explicitly get out of vi-compatible mode
