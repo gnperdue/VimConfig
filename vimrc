@@ -9,18 +9,6 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
-" cd ~/.vim/bundle
-" git clone git://github.com/tpope/vim-commentary.git
-
-" cd ~/.vim/bundle
-" git clone git://github.com/tpope/vim-markdown.git
-
-" git clone git://github.com/scala/scala-dist.git
-" cd tool-support/src/vim
-" cp -r ftdetect ~/.vim
-" cp -r indent ~/.vim
-" cp -r syntax ~/.vim
-
 " Training like Rocky...
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -268,4 +256,5 @@ execute cmd
 "test.cpp is going to be backed up as HOME/.vim_backup/day/test.cpp.hour.min.sec
 " ===================================================== AUTOMATIC BACKUPS
 
+" Can't fight cron's attempt to run a backup...
 au FileType crontab set nobackup nowritebackup
