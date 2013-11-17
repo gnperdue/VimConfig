@@ -30,6 +30,13 @@ map + ddkP
 " map {C-v}{Shift-Down} O{C-v}{Esc}j, etc.
 map OB Oj
 
+" some mode specific mappings
+" insert mode
+"  delete a line
+imap <c-d> <esc>ddi
+"  change the current word into all caps and move back to insert at the end
+imap <c-u> <esc>viwUea
+
 set history=200 " Keep the last 200 commands (default is 20)
 
 set nocompatible " explicitly get out of vi-compatible mode
