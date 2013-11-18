@@ -9,33 +9,30 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
-" Training like Rocky...
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-map <Up> :set number<CR>
-map <Down> :set nonumber<CR>
-map <Left> :bp<CR>
-map <Right> :bn<CR>
+" <mode>noremap - do not take mapped chars into account (no recursive mapping)
+" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+" You cannot copy and paste these commands.
+"  map shift down to bump all the text down.
+"  map {C-v}{Shift-Down} O{C-v}{Esc}j, etc.
+" This seems to execute whether I hold shift down or not...
+" nnoremap OB Oj
+nnoremap <Up> :set number!<CR>
+nnoremap <Down> Oj
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
 
 " map - to cut a line and move it below the one I'm on
 " map + to cut a line and move it above the one I'm on
-map - ddp
-map + ddkP
+nnoremap - ddp
+nnoremap + ddkP
 
-" see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
-" You cannot copy and paste these commands?
-" map shift down to bump all the text down.
-" map {C-v}{Shift-Down} O{C-v}{Esc}j, etc.
-map OB Oj
 
 " some mode specific mappings
 " insert mode
 "  delete a line
-imap <c-d> <esc>ddi
+inoremap <c-d> <esc>ddi
 "  change the current word into all caps and move back to insert at the end
-imap <c-u> <esc>viwUea
+inoremap <c-u> <esc>viwUea
 
 set history=200 " Keep the last 200 commands (default is 20)
 
@@ -159,11 +156,11 @@ set nrformats=
 
 set backspace=indent,eol,start " make backspace a more flexible
 " in normal mode F2 will save the file
-nmap <F2> :w<CR>
+nnoremap <F2> :w<CR>
 " in insert mode F2 will exit insert, save, enters insert again
-imap <F2> <ESC>:w<CR>i
+inoremap <F2> <ESC>:w<CR>i
 " switch between header/source with F4 in normal mode
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+noremap <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 "toggle to paste mode while in insert mode so vim doesn't autoindent pastes
 set pastetoggle=<F6>
 
