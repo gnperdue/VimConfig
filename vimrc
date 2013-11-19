@@ -9,6 +9,8 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
+" Basic Mapping section
+"""""""""""""""""""""""""""""""""""""""""""""
 " <mode>noremap - do not take mapped chars into account (no recursive mapping)
 " see http://vim.wikia.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
 " You cannot copy and paste these commands.
@@ -26,13 +28,33 @@ nnoremap <Right> :bn<CR>
 nnoremap - ddp
 nnoremap + ddkP
 
-
 " some mode specific mappings
 " insert mode
 "  delete a line
 inoremap <c-d> <esc>ddi
 "  change the current word into all caps and move back to insert at the end
 inoremap <c-u> <esc>viwUea
+
+" in normal mode F2 will save the file
+nnoremap <F2> :w<CR>
+" in insert mode F2 will exit insert, save, enters insert again
+inoremap <F2> <ESC>:w<CR>i
+" switch between header/source with F4 in normal mode
+noremap <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+"toggle to paste mode while in insert mode so vim doesn't autoindent pastes
+set pastetoggle=<F6>
+
+" use ctags
+nnoremap <f5> :!ctags -R --exclude=.git<CR>
+" autogenerate a tags file on write - it isn't obvious this should be on by default...
+"autocmd BufWritePost * call system("ctags -R --exclude=.git")
+
+" set the leader (and local leader?) for more complex mappings
+let mapleader="_"
+" let maplocalleader="_"
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+"""""""""""""""""""""""""""""""""""""""""""""
 
 set history=200 " Keep the last 200 commands (default is 20)
 
@@ -155,14 +177,6 @@ set encoding=utf-8
 set nrformats=
 
 set backspace=indent,eol,start " make backspace a more flexible
-" in normal mode F2 will save the file
-nnoremap <F2> :w<CR>
-" in insert mode F2 will exit insert, save, enters insert again
-inoremap <F2> <ESC>:w<CR>i
-" switch between header/source with F4 in normal mode
-noremap <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-"toggle to paste mode while in insert mode so vim doesn't autoindent pastes
-set pastetoggle=<F6>
 
 if has("autocmd")
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
@@ -199,10 +213,6 @@ set incsearch
 " turn off auto-commenting when going to a new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" use ctags
-nnoremap <f5> :!ctags -R --exclude=.git<CR>
-" autogenerate a tags file on write - it isn't obvious this should be on by default...
-"autocmd BufWritePost * call system("ctags -R --exclude=.git")
 
 " show whitespace chars with ":set list" (and turn off with ":set nolist")
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<         
@@ -217,6 +227,8 @@ autocmd FileType r set commentstring=#\ %s
 " AsciiDoc
 autocmd FileType asciidoc set commentstring=//\ %s
 
+" Code folding section (contains some maps)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code folding - set method to indent, but also let me make them manually.
 " Don't fold in plain text...
 augroup vimrc
@@ -233,6 +245,7 @@ let g:erlang_folding=1
 
 " JS specific folding?
 au FileType javascript call JavaScriptFold()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " AUTOMATIC BACKUPS =====================================================
 "enable backup
