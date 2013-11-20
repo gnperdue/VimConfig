@@ -234,6 +234,7 @@ autocmd FileType asciidoc set commentstring=//\ %s
 augroup vimrc
   au BufReadPre *\(*.txt\)\@<! setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+  au BufWinEnter * normal zR
 augroup END
 
 " Re-map "za" to space
