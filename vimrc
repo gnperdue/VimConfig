@@ -57,6 +57,8 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " put a word in quotes
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" put the visually selected block in quotes
+vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>f"
 """""""""""""""""""""""""""""""""""""""""""""
 
 set history=200 " Keep the last 200 commands (default is 20)
