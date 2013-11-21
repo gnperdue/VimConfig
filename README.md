@@ -62,7 +62,25 @@ as expected. Therefore, I created a new branch with:
 
     git checkout -b work`date -u +%s`
 
-This branch was committed. Now, the top-level repository, VimConfig, needs to point at 
+This branch was committed. Note, in order to push this commit to the remote server 
+for the first time, we have to change the remote url. The first time (after a 
+`git submodule init` and `git submodule update`) we will get an error when trying to
+push like:
+
+    $ git push origin work1385047577
+    fatal: remote error: 
+      You can't push to git://github.com/blah.blah
+      Use https://github.com/blah.blah
+
+We fix this with:
+
+    git remote set-url origin https://github.com/blah.blah
+
+(Just use the URL Git tells you to use.) Then we can run:
+
+    git push origin work1385047577
+
+Now, the top-level repository, VimConfig, needs to point at 
 that new commit for the submodule. This turns out to be very easy. `git status` in the 
 supermodule reveals a change at `vim/bundle/vim2hs` - all that needs to be done is this
 needs to have `git add vim/bundle/vim2hs` and then `git commit` to change the pointer
