@@ -16,17 +16,16 @@ filetype plugin indent on
 " You cannot copy and paste these commands.
 "  map shift down to bump all the text down.
 "  map {C-v}{Shift-Down} O{C-v}{Esc}j, etc.
-" This seems to execute whether I hold shift down or not...
-" nnoremap OB Oj
-nnoremap <Up> :set number!<CR>
-nnoremap <Down> Oj
+" This seems to execute whether I hold shift down or not... nnoremap OB Oj
+" nnoremap <Up> :set number!<CR>
+" nnoremap <Down> Oj
+nnoremap <Up> ddkP
+nnoremap <Down> ddp
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
 
-" map - to cut a line and move it below the one I'm on
-" map + to cut a line and move it above the one I'm on
-nnoremap - ddp
-nnoremap + ddkP
+" nnoremap - ddp
+" nnoremap + ddkP
 
 " some mode specific mappings
 " insert mode
@@ -50,10 +49,14 @@ nnoremap <f5> :!ctags -R --exclude=.git<CR>
 "autocmd BufWritePost * call system("ctags -R --exclude=.git")
 
 " set the leader (and local leader?) for more complex mappings
-let mapleader="_"
-" let maplocalleader="_"
+let mapleader="-"
+" let maplocalleader="-"
 
+" open/source the vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" put a word in quotes
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 """""""""""""""""""""""""""""""""""""""""""""
 
 set history=200 " Keep the last 200 commands (default is 20)
