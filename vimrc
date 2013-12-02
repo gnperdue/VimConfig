@@ -104,12 +104,6 @@ set shiftwidth=2
 set expandtab
 au BufRead,BufNewFile Makefile* set noexpandtab
 
-" For python, we want something like this eventually...
-" shiftwidth=4
-" softtabstop=4
-" expandtab
-" Number of spaces that a pre-existing tab is equal to.
-" For the amount of space used for a new tab use shiftwidth.
 au BufRead,BufNewFile *py,*pyw set tabstop=4
 au BufRead,BufNewFile *py,*pyw set softtabstop=4
 au BufRead,BufNewFile *py,*pyw set shiftwidth=4
@@ -121,6 +115,11 @@ au BufRead,BufNewFile *.hs set shiftwidth=2
 au BufRead,BufNewFile *.R set tabstop=2
 au BufRead,BufNewFile *.R set softtabstop=2
 au BufRead,BufNewFile *.R set shiftwidth=2
+
+augroup ruby
+  autocmd!
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+augroup END
 
 " For full syntax highlighting:
 let python_highlight_all=1
@@ -162,15 +161,16 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 " - give todo a different color
 "highlight ToDoCol ctermbg=white ctermfg=darkblue
 "au BufRead,BufNewFile * match ToDoCol /\ctodo/
- 
+
 " Turn off settings in 'formatoptions' relating to comment formatting.
 " - c : do not automatically insert the comment leader when wrapping based on
 "    'textwidth'
 " - o : do not insert the comment leader when using 'o' or 'O' from command mode
 " - r : do not insert the comment leader when hitting <Enter> in insert mode
-" Python: not needed
-" C: prevents insertion of '*' at the beginning of every line in a comment
-au BufRead,BufNewFile *.c,*.h,*.cpp set formatoptions-=c formatoptions-=o formatoptions-=r
+" TODO - purge eventually...
+"  au BufRead,BufNewFile *.c,*.h,*.cpp set formatoptions-=c formatoptions-=o formatoptions-=r
+" turn off auto-commenting when going to a new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Use UNIX (\n) line endings.
 au BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.pl,*.pm,*.m,*.hs set fileformat=unix
@@ -183,9 +183,6 @@ set nrformats=
 
 set backspace=indent,eol,start " make backspace a more flexible
 
-if has("autocmd")
-  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
-endif
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
@@ -214,10 +211,6 @@ let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
 set incsearch
-
-" turn off auto-commenting when going to a new line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 
 " show whitespace chars with ":set list" (and turn off with ":set nolist")
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<         
