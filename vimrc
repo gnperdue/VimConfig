@@ -87,6 +87,19 @@ colorscheme evening
 " show me more of the command window (HLint, etc.)
 set cmdheight=2
 
+"""""""""""""""""""""""""""""
+" Status Line
+set laststatus=2
+set statusline=%f
+set statusline+=\ -\ 
+set statusline+=%c
+set statusline+=\ -\ 
+set statusline+=%l/%L
+set statusline+=\ -\ 
+set statusline+=%n
+set statusline+=\ -\ 
+set statusline+=%y
+
 "case insensitive seach unless there are caps
 set ignorecase
 set smartcase
