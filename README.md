@@ -57,8 +57,8 @@ repository is correct. But this is sort of a painful way to swap a submodule.
 Dealing with Changes to Submodules
 ----------------------------------
 
-Example: I updated vim2hs. When checking `git status` the repository had a detacehd HEAD, 
-as expected. Therefore, I created a new branch with:
+Example: I updated vim2hs. When checking `git status` in the vim2hs repository there is a 
+detached HEAD, as expected. Therefore, I created a new branch with:
 
     git checkout -b work`date -u +%s`
 
@@ -85,3 +85,6 @@ that new commit for the submodule. This turns out to be very easy. `git status` 
 supermodule reveals a change at `vim/bundle/vim2hs` - all that needs to be done is this
 needs to have `git add vim/bundle/vim2hs` and then `git commit` to change the pointer
 to the correct commit in the submodule.
+
+As we keep making changes to submodules, we keep committing in the submodule first,
+and then running `add` and `commit` in the supermodule to keep the pointers correct.
