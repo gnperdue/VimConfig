@@ -59,6 +59,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 " put the visually selected block in quotes
 vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>f"
+
+" get a split of the previous buffer
+nnoremap <leader>pb :execute "rightbelow vsplit " . bufname("#")<cr>
 """""""""""""""""""""""""""""""""""""""""""""
 
 set history=200 " Keep the last 200 commands (default is 20)
