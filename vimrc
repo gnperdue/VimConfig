@@ -62,6 +62,18 @@ vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>f"
 
 " get a split of the previous buffer
 nnoremap <leader>pb :execute "rightbelow vsplit " . bufname("#")<cr>
+
+" automatically make searches magic
+nnoremap <leader>/ /\v
+nnoremap <leader>? ?\v
+
+"""""""""""""""""""""""""""""
+" regex's
+" note: nnoremap interprets <cr> before exe does, so we need
+" to use <lt> as a literal < to get the regex to work.
+nnoremap <leader>c :noh<cr>
+nnoremap <leader>w :execute "normal! gg" . '/\v\s+$' . "\<lt>cr>"<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""
 
 set history=200 " Keep the last 200 commands (default is 20)
@@ -290,3 +302,6 @@ execute cmd
 
 " Can't fight cron's attempt to run a backup...
 au FileType crontab set nobackup nowritebackup
+
+" don't highlight my last search when I source this...
+noh
