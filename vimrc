@@ -67,6 +67,38 @@ nnoremap <leader>pb :execute "rightbelow vsplit " . bufname("#")<cr>
 nnoremap <leader>/ /\v
 nnoremap <leader>? ?\v
 
+" toggle line numbers conveniently
+nnoremap <leader>N :setlocal number!<cr>
+
+" foldcolumn toggle
+nnoremap <leader>f :call <SID>FoldColumnToggle()<cr>
+
+function! s:FoldColumnToggle()
+  if &foldcolumn
+    setlocal foldcolumn=0
+  else
+    setlocal foldcolumn=4
+  endif
+endfunction
+
+" quickfix toggle - uses a global var!
+nnoremap <leader>q :call <SID>QuickfixToggle()<cr>
+" we have to initialzie the global var
+let g:quickfix_is_open = 0
+
+function! s:QuickfixToggle()
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open=0
+    execute g:quickfix_return_to_window . "wincmd w"
+  else
+    let g:quickfix_return_to_window = winnr()
+    copen
+    let g:quickfix_is_open=1
+  endif
+endfunction
+
+
 """""""""""""""""""""""""""""
 " regex's
 " note: nnoremap interprets <cr> before exe does, so we need
