@@ -306,6 +306,11 @@ let g:erlang_folding=1
 au FileType javascript call JavaScriptFold()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Syntax Checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" syntastic - add C++11 syntax features
+let g:syntastic_cpp_compiler_options = '-std=c++0x'
+
 " AUTOMATIC BACKUPS =====================================================
 "enable backup
 set backup
