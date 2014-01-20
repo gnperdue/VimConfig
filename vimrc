@@ -309,7 +309,7 @@ au FileType javascript call JavaScriptFold()
 " Syntax Checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntastic - add C++11 syntax features
-let g:syntastic_cpp_compiler_options = '-std=c++0x'
+let g:syntastic_cpp_compiler_options = '-std=c++0x -stdlib=libc++'
 
 " AUTOMATIC BACKUPS =====================================================
 "enable backup
