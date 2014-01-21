@@ -88,3 +88,12 @@ to the correct commit in the submodule.
 
 As we keep making changes to submodules, we keep committing in the submodule first,
 and then running `add` and `commit` in the supermodule to keep the pointers correct.
+
+Other Usage Notes
+-----------------
+
+Syntastic:
+
+* Add the file `.syntastic_cpp_config` to the GENIE project directory.
+* Add lines like `-I/path/to/include/dirs` to get syntastic to find esoteric headers.
+
