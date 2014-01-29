@@ -310,6 +310,7 @@ au FileType javascript call JavaScriptFold()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " syntastic - add C++11 syntax features
 let g:syntastic_cpp_compiler_options = '-std=c++0x -stdlib=libc++'
+let g:syntastic_python_checkers=['flake8']
 
 " AUTOMATIC BACKUPS =====================================================
 "enable backup
