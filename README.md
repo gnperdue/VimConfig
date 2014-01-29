@@ -89,6 +89,12 @@ to the correct commit in the submodule.
 As we keep making changes to submodules, we keep committing in the submodule first,
 and then running `add` and `commit` in the supermodule to keep the pointers correct.
 
+When updating a package we don't control, the appropriate method appears to be to 
+simply run `git pull origin master`, then `git checkout master`. Following up with 
+one more `git checkout master` is sometimes useful (?). Then, we simply run (in 
+the toplevel VimConfig) `git add <submodule>` and `git commit` to point at the new 
+chnageset.
+
 Other Usage Notes
 -----------------
 
