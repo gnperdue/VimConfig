@@ -95,6 +95,9 @@ one more `git checkout master` is sometimes useful (?). Then, we simply run (in
 the toplevel VimConfig) `git add <submodule>` and `git commit` to point at the new 
 chnageset.
 
+Later, we may freely `git checkout master`, then `git merge new_branch`, and 
+`git push origin master`.
+
 Other Usage Notes
 -----------------
 
